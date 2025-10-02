@@ -1,11 +1,11 @@
 import './App.css';
-import Week from './components/Week';
+import Calendar from './components/Calendar';
 
 function App() {
   return (
     <>
       <div>
-        <Week days={[1, 2, 3, 4, 5, 6, 7]} />
+        <Calendar />
       </div>
     </>
   );

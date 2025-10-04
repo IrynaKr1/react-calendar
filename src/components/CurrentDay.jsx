@@ -1,10 +1,12 @@
-function CurrentDate({ dayName, dayNumber }) {
+import styles from './CurrentDay.module.scss';
+
+function CurrentDay({ dayName, dayNumber }) {
   return (
-    <div className="current-date">
-      <div className="day-name">{dayName}</div>
-      <div className="day-number">{dayNumber}</div>
+    <div className={styles.currentDay}>
+      <div className={styles.dayName}>{dayName}</div>
+      <div className={styles.dayNumber}>{dayNumber}</div>
     </div>
   );
 }
 
-export default CurrentDate;
+export default CurrentDay;

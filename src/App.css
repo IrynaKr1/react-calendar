@@ -1,1 +1,8 @@
+:root {
+  --blue-grey-100: #d9e2ec;
+}
 
+body {
+  min-height: 100vh;
+  background: var(--blue-grey-100);
+}

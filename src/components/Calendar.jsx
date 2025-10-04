@@ -1,13 +1,17 @@
-// components/Calendar.js
 import CurrentDay from './CurrentDay';
 import Month from './Month';
+import styles from './Calendar.module.scss';
 
 function Calendar() {
   return (
-    <div className='calendar'>
-      <CurrentDay dayName='FRIDAY' dayNumber='31' />
-      <Month />
-    </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.calendar}>
+          <CurrentDay dayName='FRIDAY' dayNumber='31' />
+          <Month />
+        </div>
+      </div>
+    </>
   );
 }
 

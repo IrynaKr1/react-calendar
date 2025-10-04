@@ -1,4 +1,14 @@
 .headerStyles {
-  color: rgb(123, 0, 123);
-  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  div {
+    color: #e91e8c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 8px 0;
+  }
 }

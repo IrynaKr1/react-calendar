@@ -1,24 +1,49 @@
+import {
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
+  addDays,
+  format,
+} from 'date-fns';
 import Head from './Head';
 import TableHeader from './TableHeader';
 import Week from './Week';
 import styles from './Month.module.scss';
 
-function Month() {
-  const weeks = [
-    ['', '', '', 1, 2, 3, 4],
-    [5, 6, 7, 8, 9, 10, 11],
-    [12, 13, 14, 15, 16, 17, 18],
-    [19, 20, 21, 22, 23, 24, 25],
-    [26, 27, 28, 29, 30, 31, ''],
-  ];
+function Month({ currentDate, displayDate }) {
+  const monthStart = startOfMonth(displayDate);
+  const monthEnd = endOfMonth(displayDate);
+  const startDate = startOfWeek(monthStart);
+  const endDate = endOfWeek(monthEnd);
+
+  const weeks = [];
+  let day = startDate;
+
+  while (day <= endDate) {
+    const days = [];
+    for (let i = 0; i < 7; i++) {
+      days.push(day);
+      day = addDays(day, 1);
+    }
+    weeks.push(days);
+  }
+
+  const monthName = format(displayDate, 'MMMM').toUpperCase();
+  const year = format(displayDate, 'yyyy');
 
   return (
     <div className={styles.month}>
-      <Head month='JULY' year='2020' />
+      <Head month={monthName} year={year} />
       <div className={styles.calendarGrid}>
         <TableHeader />
         {weeks.map((weekDays, index) => (
-          <Week key={index} days={weekDays} todayDate={31} />
+          <Week
+            key={index}
+            days={weekDays}
+            currentDate={currentDate}
+            displayMonth={displayDate}
+          />
         ))}
       </div>
     </div>

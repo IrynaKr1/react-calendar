@@ -10,7 +10,7 @@ function Calendar() {
       <div className={styles.container}>
         <div className={styles.calendar}>
           <CurrentDay currentDate={currentDate} />
-          <Month />
+          <Month currentDate={currentDate} displayDate={currentDate} />
         </div>
       </div>
     </>

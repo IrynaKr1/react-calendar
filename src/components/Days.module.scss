@@ -1,11 +1,20 @@
 .dateStyle {
   color: rgb(160, 160, 160);
   font-weight: bold;
-  padding: 5px;
-  width: 15px;
-  height: 15px;
+  padding: 8px;
   text-align: center;
+  font-size: 1.1rem;
+  min-height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.today {
+  background: #e91e8c;
+  color: white !important;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
 }

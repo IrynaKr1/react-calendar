@@ -1,5 +1,5 @@
 import Head from './Head';
-import TableHead from './TableHeader';
+import TableHeader from './TableHeader';
 import Week from './Week';
 import styles from './Month.module.scss';
 
@@ -15,10 +15,10 @@ function Month() {
   return (
     <div className={styles.month}>
       <Head month='JULY' year='2020' />
-      <TableHead />
-      <div className={styles.weeksContainer}>
+      <div className={styles.calendarGrid}>
+        <TableHeader />
         {weeks.map((weekDays, index) => (
-          <Week key={index} days={weekDays} />
+          <Week key={index} days={weekDays} todayDate={31} />
         ))}
       </div>
     </div>

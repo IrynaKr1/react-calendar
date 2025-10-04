@@ -1,11 +1,11 @@
 import Day from './Day';
 import styles from './Week.module.scss';
 
-function Week({ days }) {
+function Week({ days, todayDate }) {
   return (
     <div className={styles.weekStyle}>
-      {days.map((day) => (
-        <Day key={day} date={day} />
+      {days.map((day, index) => (
+        <Day key={index} date={day} isToday={day === todayDate} />
       ))}
     </div>
   );

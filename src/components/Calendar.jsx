@@ -3,11 +3,13 @@ import Month from './Month';
 import styles from './Calendar.module.scss';
 
 function Calendar() {
+  const currentDate = new Date();
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.calendar}>
-          <CurrentDay dayName='FRIDAY' dayNumber='31' />
+          <CurrentDay currentDate={currentDate} />
           <Month />
         </div>
       </div>

@@ -1,6 +1,10 @@
+import { format } from 'date-fns';
 import styles from './CurrentDay.module.scss';
 
-function CurrentDay({ dayName, dayNumber }) {
+function CurrentDay({ currentDate }) {
+  const dayName = format(currentDate, 'EEEE').toUpperCase();
+  const dayNumber = format(currentDate, 'd');
+
   return (
     <div className={styles.currentDay}>
       <div className={styles.dayName}>{dayName}</div>
